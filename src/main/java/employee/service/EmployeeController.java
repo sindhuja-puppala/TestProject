@@ -24,14 +24,14 @@ public class EmployeeController {
 	@GetMapping("/get")
 	public String homePage(@Valid Model model) {
 	    List<Employee> list = empService.listAll();
-	    model.addAttribute("employee", list);  
+	    model.addAttribute("employee1", list);  
 	    return "index";
 	}
 	
 	@GetMapping("/add")
 	public String getEmployee( @Valid Model model){
 		Employee employee=new Employee();
-		model.addAttribute("employee",employee);
+		model.addAttribute("employee2",employee);
 		return "addemp";
 	}
 	
@@ -47,7 +47,7 @@ public class EmployeeController {
         
 		if (id.isPresent()) {
 			Employee emp = empService.getEmployeeById(id.get());
-			model.addAttribute("employee", emp);
+			model.addAttribute("employee3", emp);
 		} 
 		return "index";
 	}

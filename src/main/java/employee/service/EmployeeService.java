@@ -1,25 +1,20 @@
 package employee.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+
+
 @Service
 @Transactional
 public class EmployeeService {
 	@Autowired
 	private EmployeeRepository emprepo;
 	public List<Employee> listAll() {
-		// TODO Auto-generated method stub
 		return emprepo.findAll();
 	}
 	
